@@ -8,6 +8,7 @@ import Home from './components/Home.js'
 import Navbar from './components/Navbar.js'
 import Menu from './components/Menu.js'
 import Footer from './components/Footer.js'
+import Orders from './components/Orders.js'
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route exact path="/menu">
           <Menu/>
+        </Route>
+        <Route exact path="/orders">
+          <Orders/>
         </Route>
     </Switch>
 
