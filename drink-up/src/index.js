@@ -1,13 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from "@auth0/auth0-react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
+    <Router>
     <Auth0Provider
     domain="dev-3suzr9ow.us.auth0.com"
     clientId="sew9zrY83WEMttUHHx4kfahGpGGkxu33"
@@ -15,6 +16,7 @@ root.render(
   >
     <App />
     </Auth0Provider>
+    </Router>
   
 );
 
