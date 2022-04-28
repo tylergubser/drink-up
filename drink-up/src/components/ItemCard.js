@@ -1,13 +1,18 @@
+import React from "react";
 
+function ItemCard({drink}) {
+    
+    
+   
 
-function ItemCard() {
-
-
-
+    
     return (
         <div>
-            <h1>Drinks</h1>
+            <h1>{drink.name}</h1>
+            <image>{drink.image}</image>
+            <p>{drink.price}</p>
         </div>
+        
     )
 
 }

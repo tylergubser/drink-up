@@ -7,7 +7,7 @@ function Footer() {
         <div class="max-w-3xl mx-auto space-y-6">
           <div className="text-center font-light font-sm">
             
-            <a href="http://www.linkedin.com/in/tyler-gubser" className="hover:text-blue-700"> Tyler G. | </a>
+            <a href="http://www.linkedin.com/in/tyler-gubser" className="hover:text-blue-700"> Tyler Gubser</a>
             
           
             <p>2022</p>
