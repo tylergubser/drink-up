@@ -71,22 +71,26 @@ function Navbar({ isAuthenticated }) {
                 <ul
                     className="flex items-center justify-center p-4 overflow-x-auto text-sm font-medium"
                 >
+                     {isAuthenticated ?
                      <li className="relative">
-                        <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
+                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <NavLink to="/orders">Orders</NavLink>
                         </div>
                     </li>
+                    : null}
                     <li className="relative">
                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <NavLink to="/menu">Menu</NavLink>
                         </div>
                     </li>
                    
+                    {isAuthenticated ?
                     <li className="relative">
                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <NavLink to="/profile">Profile</NavLink>
                         </div>
                     </li>
+                    : null}
                     <li className="relative">
                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <NavLink to="/about">About</NavLink>

@@ -9,10 +9,31 @@ import Menu from './components/Menu.js'
 import Footer from './components/Footer.js'
 import Orders from './components/Orders.js'
 import EditMenu from './components/EditMenu.js'
+import React, { useEffect, useState } from "react"
 function App() {
   
   const { user, isAuthenticated } = useAuth0();
+  const [isUser, setIsUser] = useState([])
   
+  useEffect(() => {
+
+    if (isAuthenticated) {
+
+      fetch(`http://localhost:3000/users`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: user.nickname,
+          manager: false
+          }),
+        }) 
+        .then((r) => r.json())
+        .then((data) => setIsUser(data));
+
+      }},[user])
   
   return (
     <div className="mb-auto">
