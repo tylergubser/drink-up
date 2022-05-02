@@ -9,7 +9,9 @@ function ItemCard({drink}) {
     return (
         <div>
             <h1>{drink.name}</h1>
-            <image src={drink.image}></image>
+            <div>
+            <img src={drink.image} alt={drink.name}/>
+            </div>
             <p>{drink.price}</p>
         </div>
         

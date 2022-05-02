@@ -17,6 +17,8 @@ function handleSubmit(e){
         method: 'POST',
         body: formData
     })
+    // .then(resp => resp.json())
+    // .then(drink => setDrink([...drinks, drink]))
     setName("");
     setImage("");
     setPrice("");
@@ -35,7 +37,7 @@ return(
         <div className="w-full md:w-96 md:max-w-full mx-auto">
             <div  className="p-6 border border-black sm:rounded-md">
                 <form onSubmit={handleSubmit}>
-                    <lable className="block mb-6">
+                    <label className="block mb-6">
                         <span className="text-gray-700">Drink Name</span>
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="
             block
@@ -50,7 +52,7 @@ return(
             focus:ring-indigo-200
             focus:ring-opacity-50
           "></input>
-                    </lable>
+                    </label>
                     <label className="block mb-6">
                         <span className="text-gray-700">Drink Image</span>
                         <input type="file" accept="image/*"  onChange={(e) => setImage(e.target.files[0])} className="
