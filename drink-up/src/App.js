@@ -34,12 +34,13 @@ function App() {
         .then((data) => setIsUser(data));
 
       }},[user])
-  
+      console.log(isUser)
   return (
     <div className="mb-auto">
     
-      <Navbar isAuthenticated={isAuthenticated}/>
-
+     {/* {isUser.manager ? <Navbar isAuthenticated={isAuthenticated}/> :
+      null } */}
+       <Navbar isAuthenticated={isAuthenticated}/>
     <Switch>
         <Route exact path="/profile">
           <Profile/>

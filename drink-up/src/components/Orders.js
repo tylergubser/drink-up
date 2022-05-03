@@ -13,13 +13,17 @@ function Orders () {
     },[])
 
     const  order = orders.map( order =>
-        <OrderCard order={order}/>
+        <OrderCard order={order} key={order.id} setOrders={setOrders}/>
     )
-    
+    console.log(orders)
     return(
         <div>
             <h1>Orders</h1>
-            {order}
+            {orders.length >= 1 ?
+            {order} :
+            <h1>No Orders Yet</h1>
+            }
+           
         </div>
     )
 

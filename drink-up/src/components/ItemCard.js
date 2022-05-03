@@ -3,15 +3,15 @@ import React from "react";
 function ItemCard({drink}) {
     
     
-   console.log(drink)
+   console.log(drink.image)
 
     
     return (
         <div>
             <h1>{drink.name}</h1>
-            <div>
+            
             <img src={drink.image} alt={drink.name}/>
-            </div>
+            
             <p>{drink.price}</p>
         </div>
         

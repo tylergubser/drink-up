@@ -17,14 +17,16 @@ function handleSubmit(e){
         method: 'POST',
         body: formData
     })
-    // .then(resp => resp.json())
-    // .then(drink => setDrink([...drinks, drink]))
+    .then(resp => resp.json())
+    .then(drink => console.log(drink))
     setName("");
-    setImage("");
+    setImage(null);
     setPrice("");
     setMenu("");
     
 }
+
+console.log(image)
 
 
 
