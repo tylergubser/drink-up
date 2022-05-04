@@ -3,7 +3,7 @@ import ItemCard from './ItemCard.js'
 import { NavLink } from "react-router-dom";
 
 
-function Menu () { 
+function Menu ({isUser}) { 
     const [drinks, setDrinks] = useState([])
     
     useEffect(() => {
@@ -13,7 +13,7 @@ function Menu () {
       },[])
 
       console.log(drinks)
-      const  drink = drinks.map(drink =>  <ItemCard key={drink.id} drink={drink}/>)
+      const  drink = drinks.map(drink =>  <ItemCard key={drink.id} drink={drink} isUser={isUser}/>)
    
 
 return(

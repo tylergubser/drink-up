@@ -13,7 +13,7 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div>
+      <div className="relative block mb-4 bg-green-300 group rounded-lg flex space-y-6  flex-wrap p-10 box-border h-50 w-40  ">
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>

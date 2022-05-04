@@ -10,31 +10,40 @@ import Footer from './components/Footer.js'
 import Orders from './components/Orders.js'
 import EditMenu from './components/EditMenu.js'
 import React, { useEffect, useState } from "react"
+import OrderMenu from './components/OrderMenu.js'
 function App() {
   
   const { user, isAuthenticated } = useAuth0();
   const [isUser, setIsUser] = useState([])
   
-  useEffect(() => {
+  // useEffect(() => {
 
+  //   if (isAuthenticated) {
+
+  //     fetch(`http://localhost:3000/users`,
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         username: user.nickname,
+  //         manager: false
+  //         }),
+  //       }) 
+  //       .then((r) => r.json())
+  //       .then((data) => setIsUser(data));
+
+  //     }},[user])
+  useEffect(() => {
     if (isAuthenticated) {
 
-      fetch(`http://localhost:3000/users`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: user.nickname,
-          manager: false
-          }),
-        }) 
-        .then((r) => r.json())
-        .then((data) => setIsUser(data));
-
-      }},[user])
-      console.log(isUser)
+    fetch(`http://localhost:3000/users?username=${user.nickname}`)
+    .then(resp => resp.json())
+    .then(person => setIsUser(person))
+    }
+  },[user])
+  console.log(isUser)
   return (
     <div className="mb-auto">
     
@@ -52,13 +61,16 @@ function App() {
           <About />
         </Route>
         <Route exact path="/menu">
-          <Menu/>
+          <Menu isUser={isUser}/>
         </Route>
         <Route exact path="/orders">
           <Orders/>
         </Route>
         <Route exact path="/edit-menu">
           <EditMenu/>
+        </Route>
+        <Route exact path="/order-menu">
+          <OrderMenu isUser={isUser}/>
         </Route>
     </Switch>
 
