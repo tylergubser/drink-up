@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import ItemCard from './ItemCard.js'
-import { NavLink } from "react-router-dom";
 
 
-function Menu ({isUser}) { 
+
+function Menu ({isUser, menuButton}) { 
     const [drinks, setDrinks] = useState([])
     
     useEffect(() => {
@@ -17,19 +17,18 @@ function Menu ({isUser}) {
    
 
 return(
+    menuButton ? 
+<div>
     <div>
-         <li className="relative">
-                        <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
-                            <NavLink to="/edit-menu">Edit Menu</NavLink>
-                        </div>
-                    </li>
-        <div>
         <h1>Menu</h1>
-        </div>
-        
-        <div>
-           {drink}
-        </div>
+    </div>
+    <div>
+        {drink}
+    </div>
+    </div>
+    : 
+    <div>
+        <h1>We are not taking any orders at this time</h1>
     </div>
 )
 

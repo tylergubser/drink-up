@@ -96,11 +96,11 @@ function Navbar({ isAuthenticated }) {
                             <NavLink to="/about">About</NavLink>
                         </div>
                     </li>
-                    <li className="relative">
+                    {/* <li className="relative">
                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <NavLink to="/order-menu">Order Menu</NavLink>
                         </div>
-                    </li>
+                    </li> */}
                    
                     <li className="relative">
                         {isAuthenticated

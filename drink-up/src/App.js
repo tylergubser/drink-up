@@ -10,11 +10,12 @@ import Footer from './components/Footer.js'
 import Orders from './components/Orders.js'
 import EditMenu from './components/EditMenu.js'
 import React, { useEffect, useState } from "react"
-import OrderMenu from './components/OrderMenu.js'
+// import OrderMenu from './components/OrderMenu.js'
 function App() {
   
   const { user, isAuthenticated } = useAuth0();
   const [isUser, setIsUser] = useState([])
+  const [menuButton, setMenuButton] = useState(false)
   
   // useEffect(() => {
 
@@ -52,7 +53,7 @@ function App() {
        <Navbar isAuthenticated={isAuthenticated}/>
     <Switch>
         <Route exact path="/profile">
-          <Profile/>
+          <Profile setMenuButton={setMenuButton}/>
         </Route>
         <Route exact path="/">
           <Home />
@@ -61,7 +62,7 @@ function App() {
           <About />
         </Route>
         <Route exact path="/menu">
-          <Menu isUser={isUser}/>
+          <Menu isUser={isUser} menuButton={menuButton}/>
         </Route>
         <Route exact path="/orders">
           <Orders/>
@@ -69,9 +70,9 @@ function App() {
         <Route exact path="/edit-menu">
           <EditMenu/>
         </Route>
-        <Route exact path="/order-menu">
+        {/* <Route exact path="/order-menu">
           <OrderMenu isUser={isUser}/>
-        </Route>
+        </Route> */}
     </Switch>
 
     <Footer />
