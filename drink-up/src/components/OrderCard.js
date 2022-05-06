@@ -2,13 +2,16 @@ import React from 'react';
 
 function OrderCard({order, setOrders}) {
 
-
-    // fetch(`http://localhost:3000/orders/${order.id}`, {
-    //     method: "DELETE",
-    //   })
-    //   .then((r) => r.json())
-    //   .then((data) => setOrders(data))
-    function handleOrder(event) {
+    function deleteOrder() {
+    fetch(`http://localhost:3000/orders/${order.id}`, {
+        method: "DELETE",
+      })
+      .then((r) => r.json())
+      .then((data) => setOrders(data))}
+      
+    
+    
+      function handleOrder(event) {
         event.preventDefault();
     
         let smsObj = {
@@ -30,6 +33,7 @@ function OrderCard({order, setOrders}) {
 
 return(
     <div className="relative block mb-4 bg-red-800 group rounded-lg flex space-y-6  flex-wrap p-10 box-border h-50 w-40  ">
+        <button onClick={deleteOrder}>Delete Order</button>
         <div className="sm:inline-flex sm:items-center sm:shrink-0">
         <p className="text-2xl font-bold text-white">{order.drink.name}</p>
         </div>
