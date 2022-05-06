@@ -15,7 +15,10 @@ function App() {
   
   const { user, isAuthenticated } = useAuth0();
   const [isUser, setIsUser] = useState([])
-  const [menuButton, setMenuButton] = useState(false)
+  const [menuButton, setMenuButton] = useState(true)
+  
+
+
   
   // useEffect(() => {
 
@@ -62,10 +65,10 @@ function App() {
           <About />
         </Route>
         <Route exact path="/menu">
-          <Menu isUser={isUser} menuButton={menuButton}/>
+          <Menu isUser={isUser} menuButton={menuButton} />
         </Route>
         <Route exact path="/orders">
-          <Orders/>
+          <Orders />
         </Route>
         <Route exact path="/edit-menu">
           <EditMenu/>

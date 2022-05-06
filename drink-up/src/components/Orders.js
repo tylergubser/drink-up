@@ -12,6 +12,8 @@ function Orders () {
         .then(data => setOrders(data))
     },[])
 
+    
+
     // const  order = orders.map( order =>
     //     <OrderCard order={order} key={order.id} setOrders={setOrders}/>
     // )
@@ -21,7 +23,7 @@ function Orders () {
             <h1>Orders</h1>
             {orders.length >= 1 ?
             orders.map( order =>
-                <OrderCard order={order} key={order.id} setOrders={setOrders}/>
+                <OrderCard order={order} key={order.id} setOrders={setOrders} />
             ) :
             <h1>No Orders Yet</h1>
             }

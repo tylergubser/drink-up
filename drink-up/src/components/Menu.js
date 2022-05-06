@@ -3,7 +3,7 @@ import ItemCard from './ItemCard.js'
 
 
 
-function Menu ({isUser, menuButton}) { 
+function Menu ({isUser, menuButton, setPhone}) { 
     const [drinks, setDrinks] = useState([])
     
     useEffect(() => {
@@ -13,7 +13,7 @@ function Menu ({isUser, menuButton}) {
       },[])
 
       console.log(drinks)
-      const  drink = drinks.map(drink =>  <ItemCard key={drink.id} drink={drink} isUser={isUser}/>)
+      const  drink = drinks.map(drink =>  <ItemCard key={drink.id} drink={drink} isUser={isUser} setPhone={setPhone}/>)
    
 
 return(

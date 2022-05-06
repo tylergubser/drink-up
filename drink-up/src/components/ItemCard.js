@@ -10,7 +10,7 @@ function ItemCard({drink, isUser}) {
         formData.append('name', name)
         formData.append('phone_number', phone)
         formData.append('drink_id', drink.id)
-        formData.append('user_id', isUser.id)
+        formData.append('user_id', 1)
         fetch('http://localhost:3000/orders', {
             method: 'POST',
             body: formData
