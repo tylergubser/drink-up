@@ -3,19 +3,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 
 
-function Profile ({ menuButton,setMenuButton})  {
+function Profile ({menuButton, setMenuButton})  {
   const { user, isAuthenticated, isLoading } = useAuth0();
   
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-
-  function toggleMenu(menuButton) {
-    if (menuButton === true) {
-    return setMenuButton(false)}
-    else {
-    return setMenuButton(true)}}
-  console.log(menuButton)
 
   return (
     isAuthenticated && (
@@ -35,12 +28,13 @@ function Profile ({ menuButton,setMenuButton})  {
                             <NavLink to="/edit-menu">Edit Menu</NavLink>
                         </div>
                     </li>
-        {menuButton ?
-                    <button type="button" onClick={toggleMenu} className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">Turn Off Menu</button> :
-                    <button type="button" onClick={toggleMenu} className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">Turn On Menu</button> 
+                    <button onClick={()=>setMenuButton(!menuButton)}>{menuButton ? "Turn Menu Off" : "Turn Menu On"}</button>
+        {/* {menuButton ?
+                    <button type="button" onClick={setMenuButton(false)} className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">Turn Off Menu</button> :
+                    <button type="button" onClick={setMenuButton(true)} className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">Turn On Menu</button> 
                     
                      
-                    }
+                    } */}
     </div>
     )
   );

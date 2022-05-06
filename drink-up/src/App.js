@@ -10,6 +10,7 @@ import Footer from './components/Footer.js'
 import Orders from './components/Orders.js'
 import EditMenu from './components/EditMenu.js'
 import React, { useEffect, useState } from "react"
+import OrderComplete from './components/OrderComplete.js'
 // import OrderMenu from './components/OrderMenu.js'
 function App() {
   
@@ -39,6 +40,7 @@ function App() {
   //       .then((data) => setIsUser(data));
 
   //     }},[user])
+  
   useEffect(() => {
     if (isAuthenticated) {
 
@@ -46,7 +48,7 @@ function App() {
     .then(resp => resp.json())
     .then(person => setIsUser(person))
     }
-  },[user])
+  },[isAuthenticated]) 
   console.log(isUser)
   return (
     <div className="mb-auto">
@@ -56,7 +58,7 @@ function App() {
        <Navbar isAuthenticated={isAuthenticated}/>
     <Switch>
         <Route exact path="/profile">
-          <Profile setMenuButton={setMenuButton}/>
+          <Profile menuButton={menuButton} setMenuButton={setMenuButton} />
         </Route>
         <Route exact path="/">
           <Home />
@@ -65,13 +67,16 @@ function App() {
           <About />
         </Route>
         <Route exact path="/menu">
-          <Menu isUser={isUser} menuButton={menuButton} />
+          <Menu isUser={isUser} menuButton={menuButton}/>
         </Route>
         <Route exact path="/orders">
           <Orders />
         </Route>
         <Route exact path="/edit-menu">
           <EditMenu/>
+        </Route>
+        <Route exact path="/complete">
+          <OrderComplete/>
         </Route>
         {/* <Route exact path="/order-menu">
           <OrderMenu isUser={isUser}/>

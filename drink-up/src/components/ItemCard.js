@@ -1,8 +1,10 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router";
 
 function ItemCard({drink, isUser}) {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
+    let history = useHistory();
     
         function handleOrder(e) {
         e.preventDefault()
@@ -19,6 +21,8 @@ function ItemCard({drink, isUser}) {
         .then(drink => console.log(drink))
         setName("");
         setPhone("");
+        history.push("/complete");
+
         
         
 

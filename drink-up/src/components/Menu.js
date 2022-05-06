@@ -12,12 +12,12 @@ function Menu ({isUser, menuButton, setPhone}) {
         .then(data => setDrinks(data))
       },[])
 
-      console.log(drinks)
+      console.log(menuButton)
       const  drink = drinks.map(drink =>  <ItemCard key={drink.id} drink={drink} isUser={isUser} setPhone={setPhone}/>)
    
 
 return(
-    menuButton ? 
+   menuButton ? 
 <div>
     <div>
         <h1>Menu</h1>
@@ -25,7 +25,7 @@ return(
     <div>
         {drink}
     </div>
-    </div>
+</div>
     : 
     <div>
         <h1>We are not taking any orders at this time</h1>
