@@ -36,15 +36,15 @@ function ItemCard({drink, isUser}) {
 
     
     return (
-        <div className="relative block mb-4 bg-lime-600 group rounded-lg flex space-y-6  flex-wrap p-10 box-border h-50 w-40  ">
+        <div className="relative block mb-4 bg-gradient-to-r from-slate-200 to-gray-500 group rounded-lg flex space-y-6  flex-wrap p-10 box-border h-50  ">
             <div className="sm:inline-flex sm:items-center sm:shrink-0">
                 <p className="text-2xl font-bold text-white">{drink.name}</p>
             </div>
-            <div className="sm:inline-flex sm:items-center sm:shrink-0 py-3">
+            <div className="sm:inline-flex sm:items-center sm:shrink-0 py-3 w-2/5  ">
                 <img src={drink.image} alt="" className='w-10 h-10 object-center'/>
             </div>
             <div className="sm:inline-flex sm:items-center sm:shrink-0">
-                <p className="text-2xl font-bold text-white">${drink.price}</p>
+                <p className="text-2xl font-bold text-black">${drink.price}</p>
             </div>
             <label className="block mb-6">
                         <span className="text-gray-700">Name</span>
@@ -66,7 +66,7 @@ function ItemCard({drink, isUser}) {
                             h-10
                             px-5
                             text-indigo-100
-                            bg-blue-600
+                            bg-red-900
                             rounded-lg
                             transition-colors
                             duration-150

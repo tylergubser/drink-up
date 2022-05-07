@@ -16,3 +16,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.float-container {
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  border: 2px solid black;
+  
+  
+} 
+.float-child-2 {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: rgb(162, 114, 154);
+  
+  
+}  
+
+/* .flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+} */

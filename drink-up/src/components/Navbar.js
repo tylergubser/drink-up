@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 // import homeSVG from "./images/homeSVG.svg"
 import LoginButton from "./LoginButton.js"
 import LogoutButton from "./LogoutButton.js"
+import { GiMartini } from 'react-icons/gi';
 
 
 function Navbar({ isAuthenticated }) {
@@ -13,11 +14,11 @@ function Navbar({ isAuthenticated }) {
                 className="flex items-center justify-between space-around h-16 max-w-screen-xl px-4 mx-auto "
             >
                 <div className="flex flex-1 w-0 lg:hidden sm:text-center">
-                    <NavLink to="/">Drinks Up</NavLink>
+                    <NavLink to="/">Drinks Up<GiMartini/></NavLink>
                 </div>
                 <div className="flex items-center space-x-4">
                     <div className="hidden mb-0 lg:flex">
-                        <NavLink to="/">Drinks Up</NavLink>
+                        <NavLink to="/">Drinks Up<GiMartini/></NavLink>
                     </div>
                 </div>
                 <ul
@@ -47,6 +48,13 @@ function Navbar({ isAuthenticated }) {
                             <NavLink to="/about">About</NavLink>
                         </div>
                     </li>
+                    {isAuthenticated ?
+                    <li className="relative">
+                        <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
+                            <NavLink to="/qr-code">QR Code</NavLink>
+                        </div>
+                    </li>
+                    : null}
                    
                    
                     <li className="relative">
@@ -96,6 +104,13 @@ function Navbar({ isAuthenticated }) {
                             <NavLink to="/about">About</NavLink>
                         </div>
                     </li>
+                    {isAuthenticated ?
+                    <li className="relative">
+                        <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
+                            <NavLink to="/qr-code">QR Code</NavLink>
+                        </div>
+                    </li>
+                    : null}
                     {/* <li className="relative">
                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <NavLink to="/order-menu">Order Menu</NavLink>

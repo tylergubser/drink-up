@@ -1,13 +1,17 @@
 import React from 'react';
+import { GiMartini } from 'react-icons/gi';
 
 function OrderCard({order, setOrders}) {
 
-    function deleteOrder() {
-    fetch(`http://localhost:3000/orders/${order.id}`, {
+    function deleteOrder(e) {
+        e.preventDefault();
+        fetch(`http://localhost:3000/orders/${order.id}`, {
         method: "DELETE",
       })
       .then((r) => r.json())
-      .then((data) => setOrders(data))}
+      .then((data) => setOrders(data))
+      console.log(order.id)
+    }
       
     
     
@@ -32,18 +36,18 @@ function OrderCard({order, setOrders}) {
     }
 
 return(
-    <div className="relative block mb-4 bg-red-800 group rounded-lg flex space-y-6  flex-wrap p-10 box-border h-50 w-40  ">
-        <button onClick={deleteOrder}>Delete Order</button>
+    <div className="relative block mb-4 bg-red-900 group rounded-lg flex space-y-6  flex-wrap p-10 box-border h-30 w-2/5  ">
+        <button type="button" onClick={deleteOrder}>Delete Order</button>
         <div className="sm:inline-flex sm:items-center sm:shrink-0">
-        <p className="text-2xl font-bold text-white">{order.drink.name}</p>
+        <div className="text-2xl font-bold text-white">{order.drink.name}</div>
         </div>
         <div className="sm:inline-flex sm:items-center sm:shrink-0">
-        <p className="text-2xl font-bold text-white">{order.name}</p>
+        <div className="text-2xl font-bold text-white">{order.name}</div>
         </div>
         <div className="sm:inline-flex sm:items-center sm:shrink-0">
-        <p className="text-2xl font-bold text-white">{order.id}</p>
+        <div className="text-2xl font-bold text-white">{order.id}</div>
         </div>
-        <button type="button" onClick={handleOrder}>Order Complete</button> 
+        <button type="button" onClick={handleOrder}>Order Complete<GiMartini/></button> 
     </div>
 
 

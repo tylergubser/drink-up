@@ -18,17 +18,17 @@ function Menu ({isUser, menuButton, setPhone}) {
 
 return(
    menuButton ? 
-<div>
+<div >
     <div>
-        <h1>Menu</h1>
+        <h1 className="text-2xl font-bold text-black text-center bg-slate-300">Menu</h1>
     </div>
-    <div>
+    <div className="grid gap-4 grid-cols-4 grid-rows-3 drop-shadow-2xl bg-slate-300">
         {drink}
     </div>
 </div>
     : 
-    <div>
-        <h1>We are not taking any orders at this time</h1>
+    <div className="h-full w-full bg-gradient-to-r from-slate-200 to-gray-500 text-2xl font-bold text-black text-center bg-slate-300">
+        <h1 className="h-full w-full">We are not taking any orders at this time</h1>
     </div>
 )
 

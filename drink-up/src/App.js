@@ -11,6 +11,7 @@ import Orders from './components/Orders.js'
 import EditMenu from './components/EditMenu.js'
 import React, { useEffect, useState } from "react"
 import OrderComplete from './components/OrderComplete.js'
+import QrCode from './components/QrCode.js'
 // import OrderMenu from './components/OrderMenu.js'
 function App() {
   
@@ -48,7 +49,7 @@ function App() {
     .then(resp => resp.json())
     .then(person => setIsUser(person))
     }
-  },[isAuthenticated]) 
+  },[user]) 
   console.log(isUser)
   return (
     <div className="mb-auto">
@@ -78,9 +79,9 @@ function App() {
         <Route exact path="/complete">
           <OrderComplete/>
         </Route>
-        {/* <Route exact path="/order-menu">
-          <OrderMenu isUser={isUser}/>
-        </Route> */}
+        <Route exact path="/qr-code">
+          <QrCode/>
+        </Route>
     </Switch>
 
     <Footer />
