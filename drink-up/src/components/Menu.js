@@ -3,7 +3,7 @@ import ItemCard from './ItemCard.js'
 
 
 
-function Menu ({isUser, menuButton, setPhone}) { 
+function Menu ({isUser, menuButton, setPhone, menu}) { 
     const [drinks, setDrinks] = useState([])
     
     useEffect(() => {
@@ -12,17 +12,17 @@ function Menu ({isUser, menuButton, setPhone}) {
         .then(data => setDrinks(data))
       },[])
 
-      console.log(menuButton)
+      console.log(menu)
       const  drink = drinks.map(drink =>  <ItemCard key={drink.id} drink={drink} isUser={isUser} setPhone={setPhone}/>)
    
 
 return(
-   menuButton ? 
+   menu.active ? 
 <div >
     <div>
         <h1 className="text-2xl font-bold text-black text-center bg-slate-300">Menu</h1>
     </div>
-    <div className="grid gap-4 grid-cols-4 grid-rows-3 drop-shadow-2xl bg-slate-300">
+    <div className="grid gap-4 grid-cols-3 grid-rows-3 drop-shadow-2xl bg-slate-300">
         {drink}
     </div>
 </div>

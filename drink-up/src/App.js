@@ -6,19 +6,20 @@ import Profile from './components/Profile.js'
 import Home from './components/Home.js'
 import Navbar from './components/Navbar.js'
 import Menu from './components/Menu.js'
-import Footer from './components/Footer.js'
+// import Footer from './components/Footer.js'
 import Orders from './components/Orders.js'
 import EditMenu from './components/EditMenu.js'
 import React, { useEffect, useState } from "react"
 import OrderComplete from './components/OrderComplete.js'
 import QrCode from './components/QrCode.js'
+import PrintComponent from './components/PrintComponent.js'
 // import OrderMenu from './components/OrderMenu.js'
 function App() {
   
   const { user, isAuthenticated } = useAuth0();
   const [isUser, setIsUser] = useState([])
   const [menuButton, setMenuButton] = useState(true)
-  
+  const [menu, setMenu] = useState("")
 
 
   
@@ -50,7 +51,15 @@ function App() {
     .then(person => setIsUser(person))
     }
   },[user]) 
-  console.log(isUser)
+
+  useEffect(() => {
+    fetch('http://localhost:3000/menus/1')
+    .then(resp => resp.json())
+    .then(data => setMenu(data))
+  },[])
+
+  console.log(menu)
+  // console.log(isUser)
   return (
     <div className="mb-auto">
     
@@ -59,16 +68,16 @@ function App() {
        <Navbar isAuthenticated={isAuthenticated}/>
     <Switch>
         <Route exact path="/profile">
-          <Profile menuButton={menuButton} setMenuButton={setMenuButton} />
+          <Profile menuButton={menuButton} setMenuButton={setMenuButton} menu={menu} setMenu={setMenu} />
         </Route>
         <Route exact path="/">
-          <Home />
+          <Home isAuthenticated={isAuthenticated}/>
         </Route>
         <Route exact path="/about">
           <About />
         </Route>
         <Route exact path="/menu">
-          <Menu isUser={isUser} menuButton={menuButton}/>
+          <Menu isUser={isUser} menuButton={menuButton} menu={menu}/>
         </Route>
         <Route exact path="/orders">
           <Orders />
@@ -82,9 +91,12 @@ function App() {
         <Route exact path="/qr-code">
           <QrCode/>
         </Route>
+        <Route exact path="/PrintMenu">
+            <PrintComponent />
+          </Route>
     </Switch>
 
-    <Footer />
+    {/* <Footer /> */}
     </div>
   );
 }

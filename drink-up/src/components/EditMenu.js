@@ -26,7 +26,7 @@ function handleSubmit(e){
     
 }
 
-console.log(image)
+// console.log(image)
 
 
 

@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
   // <div className="flex-wrapper">
-    <footer className="text-center flex flex-col justify-center items-center absolute w-full bg-inherit">
+    <footer className="text-center flex flex-col justify-center items-center absolute w-full bg-inherit bottom-0">
       <div className="max-w-screen-xl px-4 py-10 mx-auto sm:px-6 lg:px-8 bottom-0">
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="text-center font-light font-sm">

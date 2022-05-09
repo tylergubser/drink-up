@@ -14,11 +14,11 @@ function Navbar({ isAuthenticated }) {
                 className="flex items-center justify-between space-around h-16 max-w-screen-xl px-4 mx-auto "
             >
                 <div className="flex flex-1 w-0 lg:hidden sm:text-center">
-                    <NavLink to="/">Drinks Up<GiMartini/></NavLink>
+                    <NavLink to="/">Drink Up<GiMartini/></NavLink>
                 </div>
                 <div className="flex items-center space-x-4">
                     <div className="hidden mb-0 lg:flex">
-                        <NavLink to="/">Drinks Up<GiMartini/></NavLink>
+                        <NavLink to="/">Drink Up<GiMartini/></NavLink>
                     </div>
                 </div>
                 <ul

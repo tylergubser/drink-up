@@ -1,3 +1,4 @@
+import qr from "../images/QR_code_drink_up.png"
 
 
 function QrCode() {
@@ -11,8 +12,9 @@ function QrCode() {
     
     <div>
         <div>
-            <img src="./images/QR_code_drink_up.png" alt="QR Code"/>
+            <img src={qr} alt="QR Code"/>
         </div>
+        
     </div>
     )
 }

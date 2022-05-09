@@ -29,7 +29,7 @@ function Orders () {
     return(
         <div className="float-container">
             
-            <div className="float-child ">
+            <div className="float-child h-screen ">
                 <h1 className="text-black text-center text-2xl font-bold">Orders</h1>
                     {orders.length >= 1 ?
                     orders.map( order =>
@@ -38,7 +38,7 @@ function Orders () {
                     <h1 className="text-black text-center text-1xl font-bold">No Orders Yet</h1>
                     }
             </div>
-            <div className="float-child-2">
+            <div className="float-child-2 h-screen">
                 <h1 className="text-black text-center text-2xl font-bold">Completed Orders</h1>
                 {/* <h3><button className=" font-bold
                             h-10
