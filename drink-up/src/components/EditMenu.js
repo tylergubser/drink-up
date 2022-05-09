@@ -35,12 +35,12 @@ function handleSubmit(e){
 
 
 return(
-    <div  className="relative p-6 flex-auto">
+    <div  className="relative p-6 flex-auto bg-cover w-screen h-screen bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiwr3iYj8YunS_bZDT1fhR82kE79_XFXAlAw&usqp=CAU')]">
         <div className="w-full md:w-96 md:max-w-full mx-auto">
             <div  className="p-6 border border-black sm:rounded-md">
                 <form onSubmit={handleSubmit}>
                     <label className="block mb-6">
-                        <span className="text-gray-700">Drink Name</span>
+                        <span className="text-2xl font-bold text-white">Drink Name</span>
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="
             block
             w-full
@@ -56,7 +56,7 @@ return(
           "></input>
                     </label>
                     <label className="block mb-6">
-                        <span className="text-gray-700">Drink Image</span>
+                        <span className="text-2xl font-bold text-white">Drink Image</span>
                         <input type="file" accept="image/*"  onChange={(e) => setImage(e.target.files[0])} className="
             block
             w-full
@@ -72,7 +72,7 @@ return(
           "></input>
                     </label>
                     <label className="block mb-6">
-                        <span className="text-gray-700">Drink $</span>
+                        <span className="text-2xl font-bold text-white">Drink $</span>
                         <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} className="
             block
             w-full
@@ -88,7 +88,7 @@ return(
           "></input>
                     </label>
                     <label className="block mb-6">
-                        <span className="text-gray-700">Menu Number</span>
+                        <span className="text-2xl font-bold text-white">Menu Number</span>
                         <input type="text" value={menu} onChange={(e) => setMenu(e.target.value)} className="
             block
             w-full
@@ -110,7 +110,7 @@ return(
                             h-10
                             px-5
                             text-indigo-100
-                            bg-blue-600
+                            bg-red-900
                             rounded-lg
                             transition-colors
                             duration-150

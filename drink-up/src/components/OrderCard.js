@@ -1,7 +1,7 @@
 import React from 'react';
 import { GiMartini } from 'react-icons/gi';
 
-function OrderCard({order, setOrders}) {
+function OrderCard({order, setOrders, orders, completedOrders, setCompletedOrders}) {
 
     function deleteOrder(e) {
         e.preventDefault();
@@ -10,10 +10,19 @@ function OrderCard({order, setOrders}) {
       })
       .then((r) => r.json())
       .then((data) => setOrders(data))
-      console.log(order.id)
+    //   addToCompOrders(order)
+      removeOrders(order)
     }
       
-    
+    function removeOrders(order) {
+    const   newOrderlist = orders.filter((thing) => thing.id !== order.id)
+    setOrders(newOrderlist)
+    }
+
+    // function addToCompOrders(order) {
+    // setCompletedOrders([...completedOrders,order])
+
+    // }
     
       function handleOrder(event) {
         event.preventDefault();
@@ -33,6 +42,8 @@ function OrderCard({order, setOrders}) {
         })
         .then(resp => resp.json())
         .then(resp => console.log(resp))
+        // removeOrders(order)
+        // addToCompOrders(order)
     }
 
 return(

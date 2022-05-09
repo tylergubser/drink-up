@@ -15,7 +15,7 @@ function PrintComponent() {
                     <div className="text-center">
                         <div className="flex flex-col justify-center items-center">
                             <ReactToPrint
-                                trigger={() => <h1 className="p-2 text-red-500 text-center cursor-pointer ">Print</h1>}
+                                trigger={() => <h1 className="p-2 text-red-500 text-center cursor-pointer text-2xl font-bold ">Print</h1>}
                                 content={() => componentRef}
                             />
                         </div>

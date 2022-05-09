@@ -22,7 +22,7 @@ return(
     <div>
         <h1 className="text-2xl font-bold text-black text-center bg-slate-300">Menu</h1>
     </div>
-    <div className="grid gap-4 grid-cols-3 grid-rows-3 drop-shadow-2xl bg-slate-300">
+    <div className="grid gap-4 grid-cols-3 w-50  drop-shadow-2xl bg-slate-300">
         {drink}
     </div>
 </div>
