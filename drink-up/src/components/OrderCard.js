@@ -19,6 +19,11 @@ function OrderCard({order, setOrders, orders, completedOrders, setCompletedOrder
     setOrders(newOrderlist)
     }
 
+    function onReorder(order) {
+        const already = completedOrders.find( thing => thing.id === order.id)
+        already ? alert("already completed")  : setCompletedOrders([...completedOrders, order])
+       
+       }
     // function addToCompOrders(order) {
     // setCompletedOrders([...completedOrders,order])
 
@@ -42,13 +47,13 @@ function OrderCard({order, setOrders, orders, completedOrders, setCompletedOrder
         })
         .then(resp => resp.json())
         .then(resp => console.log(resp))
-        // removeOrders(order)
-        // addToCompOrders(order)
+        removeOrders(order)
+        onReorder(order)
     }
 
 return(
     <div className="relative block mb-4 bg-red-900 group rounded-lg flex space-y-6  flex-wrap p-10 box-border h-30 w-2/5  ">
-        <button type="button" onClick={deleteOrder}>Delete Order</button>
+        <button type="button" onClick={deleteOrder}>Picked Up</button>
         <div className="sm:inline-flex sm:items-center sm:shrink-0">
         <div className="text-2xl font-bold text-white">{order.drink.name}</div>
         </div>
