@@ -23,8 +23,7 @@ code {
 }
 
 .float-child {
-  width: 50%;
-  float: left;
+ 
   padding: 20px;
   border: 2px solid black;
   
@@ -39,6 +38,12 @@ code {
   
   
 }  
+
+.img {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
 
 /* .flex-wrapper {
   display: flex;

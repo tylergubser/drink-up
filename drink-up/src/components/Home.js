@@ -5,8 +5,8 @@ function Home ({isAuthenticated}) {
 
 
     return(
-        <div  className="bg-cover w-screen h-screen bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHpz9BUiRJ6ksJwvSmPOyprSq5be5DTjSXqA&usqp=CAU')]">
-            <h1 className="text-white text-center text-2xl font-bold">Welcome To Drink Up!</h1>
+        <div  className="bg-cover w-screen h-screen img bg-[url('https://30a20c8026d997551a9b-80de70764fbee87b4094f1a6a0e604ef.ssl.cf1.rackcdn.com/RW_Drinks_006Fade_3.gif')]">
+            <div className="text-white text-center text-2xl font-bold">Welcome To Drink Up!</div>
             <div>
                { isAuthenticated ?
                 <div>
@@ -40,7 +40,7 @@ function Home ({isAuthenticated}) {
                 :
                 <div>
                     <div>
-                    <li className="relative">
+                    {/* <li className="relative">
                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <NavLink to="/menu"><button
                                                         type="submit"
@@ -61,7 +61,7 @@ function Home ({isAuthenticated}) {
                                                     Menu
                                                     </button></NavLink>
                         </div>
-                    </li>
+                    </li> */}
                     </div>
 
                 </div>}

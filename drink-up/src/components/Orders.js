@@ -27,18 +27,19 @@ function Orders () {
     // )
     console.log(orders)
     return(
-        <div className="float-container">
+        <div className="float-container ">
             
-            <div className="float-child h-screen ">
-                <h1 className="text-black text-center text-2xl font-bold">Orders</h1>
+            <p className="text-black text-center text-2xl font-bold  ">Orders</p>
+            <div className=" float-child h-screen grid gap-4 grid-cols-4 flex-wrap ">
+                
                     {orders.length >= 1 ?
                     orders.map( order =>
                     <OrderCard order={order} key={order.id} setOrders={setOrders} orders={orders}/>
                     ) :
-                    <h1 className="text-black text-center text-1xl font-bold">No Orders Yet</h1>
+                    <div className="text-black text-center text-1xl font-bold">No Orders Yet</div>
                     }
             </div>
-            <div className="float-child-2 h-screen">
+            {/* <div className="float-child-2 h-screen">
                 <h1 className="text-black text-center text-2xl font-bold">Completed Orders</h1>
                 {completedOrders.length >= 1 ?
                     completedOrders.map( order =>
@@ -47,7 +48,7 @@ function Orders () {
                     <h1 className="text-black text-center text-1xl font-bold">No Orders Yet</h1>
                     }
             </div>
-           
+            */}
         </div>
     )
 

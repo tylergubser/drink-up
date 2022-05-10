@@ -77,7 +77,7 @@ function App() {
           <About />
         </Route>
         <Route exact path="/menu">
-          <Menu isUser={isUser} menuButton={menuButton} menu={menu}/>
+          <Menu isUser={isUser} menuButton={menuButton} menu={menu} isAuthenticated={isAuthenticated}/>
         </Route>
         <Route exact path="/orders">
           <Orders />
