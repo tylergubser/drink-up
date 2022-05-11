@@ -3,7 +3,7 @@ import ItemCard from './ItemCard.js'
 
 
 
-function Menu ({isUser, menuButton, setPhone, menu, isAuthenticated}) { 
+function Menu ({isUser, setPhone, menu, isAuthenticated}) { 
     const [drinks, setDrinks] = useState([])
     
     useEffect(() => {
@@ -27,8 +27,8 @@ return(
     </div>
 </div>
     : 
-    <div className="h-full w-full bg-gradient-to-r from-slate-200 to-gray-500 text-2xl font-bold text-black text-center bg-slate-300">
-        <h1 className="h-full w-full">We are not taking any orders at this time</h1>
+    <div className="h-screen w-screen bg-cover img bg-[url('https://media3.giphy.com/media/ccRN9H1zx8KSgUPgyD/giphy.gif')]">
+        <h1 className="h-full w-full text-2xl font-bold text-white text-center">We are not taking any orders at this time</h1>
     </div>
 )
 

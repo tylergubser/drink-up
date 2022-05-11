@@ -1,7 +1,7 @@
-
+import { useEffect } from 'react'
 
 function OrderComplete() {
-
+    useEffect(() => {       window.scrollTo(0, 0);     }, []);
 
 return(
     <div className="  bg-cover w-screen h-screen bg-[url('https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/11/6/1415269419969/cocktails.gif')] ">

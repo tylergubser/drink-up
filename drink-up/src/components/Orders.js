@@ -29,8 +29,8 @@ function Orders () {
     return(
         <div className="float-container ">
             
-            <p className="text-black text-center text-2xl font-bold  ">Orders</p>
-            <div className=" float-child h-screen grid gap-4 grid-cols-4 flex-wrap ">
+            <div className="text-black text-center text-2xl font-bold  bg-slate-300">Orders</div>
+            <div className=" float-child h-screen grid gap-4 grid-cols-3 flex-wrap drop-shadow-2xl">
                 
                     {orders.length >= 1 ?
                     orders.map( order =>

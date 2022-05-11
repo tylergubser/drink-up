@@ -20,15 +20,7 @@ function OrderCard({order, setOrders, orders, completedOrders, setCompletedOrder
     setOrders(newOrderlist)
     }
 
-    // function onReorder(order) {
-    //     const already = completedOrders.find( thing => thing.id === order.id)
-    //     already ? alert("already completed")  : setCompletedOrders([...completedOrders, order])
-       
-    //    }
-    // function addToCompOrders(order) {
-    // setCompletedOrders([...completedOrders,order])
-
-    // }
+   
     function updateOrder(order) {
 
         fetch(`http://localhost:3000/orders/${order.id}`,
@@ -75,9 +67,6 @@ return(
         <label className="sm:inline-flex sm:items-center sm:shrink-0">
         <p className="text-2xl font-bold text-white">{order.drink.name}</p>
         </label>
-        {/* <label className="sm:inline-flex sm:items-center sm:shrink-0">
-        <p className="text-1xl font-bold text-white">{order.name}</p>
-        </label> */}
         <label className="sm:inline-flex sm:items-center sm:shrink-0">
         <p className="text-2xl font-bold text-white">Order #{order.id}</p>
         </label>
@@ -89,11 +78,8 @@ return(
         <label className="sm:inline-flex sm:items-center sm:shrink-0">
         <p className="text-2xl font-bold text-white">{order.drink.name}</p>
         </label>
-        {/* <label className="sm:inline-flex sm:items-center sm:shrink-0">
-        <p className="text-1xl font-bold text-white">{order.name}</p>
-        </label> */}
         <label className="sm:inline-flex sm:items-center sm:shrink-0">
-        <p className="text-2xl font-bold text-white">Order #{order.id}</p>
+        <p className="text-2xl font-bold text-red-900">Order #{order.id}</p>
         </label>
         <button className="text-1xl font-bold text-white" type="button" onClick={handleOrder}>Order Complete<GiMartini/></button> 
     </div> 

@@ -1,70 +1,13 @@
-import { NavLink } from "react-router-dom";
+
 import React from "react";
 
-function Home ({isAuthenticated}) {
+function Home () {
 
 
     return(
         <div  className="bg-cover w-screen h-screen img bg-[url('https://30a20c8026d997551a9b-80de70764fbee87b4094f1a6a0e604ef.ssl.cf1.rackcdn.com/RW_Drinks_006Fade_3.gif')]">
             <div className="text-white text-center text-2xl font-bold">Welcome To Drink Up!</div>
             <div>
-               { isAuthenticated ?
-                <div>
-                    <div>
-                    {/* <li className="relative">
-                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
-                            <NavLink to="/orders"><button
-                                                        type="submit"
-                                                        className="
-                             font-bold
-                            h-10
-                            px-5
-                            text-indigo-100
-                            bg-blue-600
-                            rounded-lg
-                            transition-colors
-                            duration-150
-                            uppercase
-                            focus:shadow-outline
-                            hover:bg-blue-800
-                            
-                        "
-                                                    >
-                                                    Orders
-                                                    </button></NavLink>
-                        </div>
-                    </li> */}
-                    </div>
-
-                </div>
-                :
-                <div>
-                    <div>
-                    {/* <li className="relative">
-                        <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
-                            <NavLink to="/menu"><button
-                                                        type="submit"
-                                                        className="
-                             font-bold
-                            h-10
-                            px-5
-                            text-indigo-100
-                            bg-blue-600
-                            rounded-lg
-                            transition-colors
-                            duration-150
-                            uppercase
-                          
-                            
-                        "
-                                                    >
-                                                    Menu
-                                                    </button></NavLink>
-                        </div>
-                    </li> */}
-                    </div>
-
-                </div>}
             </div>
         </div>
     )
